@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"Restaurants.restaurants"},{"v":2,"key":{"Restaurant_Name":1},"name":"Restaurant_Name","ns":"Restaurants.restaurants"},{"v":2,"key":{"__v":1},"name":"_v_","ns":"Restaurants.restaurants"}],"uuid":"8faccd5e6c1447849ace6de46464b3e2"}

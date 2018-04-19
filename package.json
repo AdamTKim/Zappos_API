@@ -1,0 +1,16 @@
+{
+  "name": "Restaurants",
+  "version": "1.0.0",
+  "description": "Zappos Intern",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
+  "author": "Adam Kim",
+  "license": "ISC"
+}
