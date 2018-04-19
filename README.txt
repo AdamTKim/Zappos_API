@@ -1,3 +1,11 @@
+************************************************************************************************************************
+SETUP ISN'T NECESSARY AS IT IS ALREADY RUNNING ON A PERSONAL SERVER. NAVIGATE TO akdyn.asuscomm.com:5050 TO GET STARTED.
+IF FOR SOME REASON THE SERVER IS DOWN YOU CAN EITHER CONTACT ME OR CONTINUE WITH THE STEPS BELOW
+************************************************************************************************************************
+
+
+
+
 INSTRUCTIONS ARE WRITTEN FOR A WINDOWS INSTALLATION
 
 
@@ -15,22 +23,69 @@ To install and run this project, please follow the steps below:
 
 2) Install MongoDB
 	- MongoDB can be found and downloaded from https://www.mongodb.com/download-center?jmp=nav#community
-	- The collections I used to create this project will be bundled, if starting fresh ensure that the 
-	fields (columns) are named the same else my program will not be able to communicate with the database.
+	- The collections I used to create this project will be bundled in a folder called "Dumped_MongoDB", if starting fresh ensure that the fields (columns) are named the same else my program will not be able to communicate with the database.
 
 3) Install Mongoose, Body-Parser and Express
 	- Start a Git Bash cmd line within the program directory.
 	- Since my program requires these modules, the command "npm install" will install all of the dependencies with a single command.
 	- If you wish to install them individually the commands for each will be listed below:
-	- Mongoose: "npm install mongoose"
-	- Express: "npm install express --save"
-	- Body-Parser: "npm install body-parser"
+		- Mongoose: "npm install mongoose"
+		- Express: "npm install express --save"
+		- Body-Parser: "npm install body-parser"
 
 4) Start MongoDB
 	- Open 2 cmd line windows (may need admin privileges) and navigate to where MongoDB is installed.
 	- Run the Mongod and Mongo executables from the cmd line (one in each window).
 
-5) Start Node
+5) Restore MongoDB Database
+	- To restore from my included DB, open a cmd line windows (may need admin privileges) and navigate to where MongoDB is installed.
+	- When there, run the command "mongorestore -d Restaurants <directory_backup_location>". This will restore my original database.
+
+6) Start Node
 	- Start a Git Bash cmd line within the program directory (or use previous window if still open).
 	- Run the command "nodemon", this will start running node app.js as localhost.
 	- Currently my program listens for traffic on port 5050, this can be changed in app.js if blocked.
+
+7) Finished
+	- If running as a localhost, navigate to localhost:<portnumber>/api/[Restaurants || Menus || MenuItems] to get started.
+
+
+
+
+NOTES: I'll include a diagram of my MongoDB schema to avoid any confusion on how it was set up.
+
+
+COMMANDS: I've set it up to where you can search for items directly from the URL. I'll list the various commands below.
+
+
+SHOW ALL ITEMS IN COLLECTION
+	- localhost:5050/api/Restaurants
+	- localhost:5050/api/Menus
+	- localhost:5050/api/MenusItems
+
+FIND RESTAURANTS BY ID/NAME
+	- localhost:5050/api/Restaurants/_id/<parameter>
+	- localhost:5050/api/Restaurants/Restaurant_Name/<parameter>
+
+FIND MENUS BY ID/NAME/RESTAURANT_ID
+	- localhost:5050/api/Menus/_id/<parameter>
+	- localhost:5050/api/Menus/Menu_Name/<parameter>
+	- localhost:5050/api/Menus/Restaurant_ID/<parameter>
+
+FIND MENU ITEMS BY ID/NAME/MENU_ID
+	- localhost:5050/api/MenusItems/_id/<parameter>
+	- localhost:5050/api/MenusItems/Item_Name/<parameter>
+	- localhost:5050/api/MenusItems/Menu_ID/<parameter>
+
+
+POST, PUT and DELETE all require a REST client like RestEasy to perform.
+
+POST SYNTAX
+	- localhost:5050/api/Restaurants
+	- localhost:5050/api/Menus
+	- localhost:5050/api/MenusItems
+
+PUT/DELETE SYNTAX
+	- localhost:5050/api/Restaurants/<_id parameter>
+	- localhost:5050/api/Menus/<_id parameter>
+	- localhost:5050/api/MenusItems/<_id parameter>

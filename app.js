@@ -337,5 +337,7 @@ app.delete('/api/MenuItems/:_id', function(req, res){
 	}
 });
 
+
+//Listen on Port 5050 for traffic
 app.listen(5050);
 console.log('Starting Connection on Port 5050');
